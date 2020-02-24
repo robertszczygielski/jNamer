@@ -122,8 +122,8 @@ class BasicLettersTest {
 
         // then
         assertAll(
-                () ->   assertTrue(result.isBlank()),
-                () ->assertTrue(result.isEmpty())
+                () -> assertTrue(result.isBlank()),
+                () -> assertTrue(result.isEmpty())
         );
     }
 
@@ -137,8 +137,8 @@ class BasicLettersTest {
 
         // then
         assertAll(
-                () ->   assertTrue(result.isBlank()),
-                () ->assertTrue(result.isEmpty())
+                () -> assertTrue(result.isBlank()),
+                () -> assertTrue(result.isEmpty())
         );
     }
 
@@ -152,8 +152,8 @@ class BasicLettersTest {
 
         // then
         assertAll(
-                () ->   assertTrue(result.isBlank()),
-                () ->assertTrue(result.isEmpty())
+                () -> assertTrue(result.isBlank()),
+                () -> assertTrue(result.isEmpty())
         );
     }
 }
