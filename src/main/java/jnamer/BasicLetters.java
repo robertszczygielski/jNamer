@@ -1,4 +1,4 @@
-package alphabet;
+package jnamer;
 
 import exceptions.JNamerNoIndexException;
 
@@ -29,7 +29,7 @@ public class BasicLetters {
 
         IntStream.range(0, length)
                 .forEach(it -> {
-                    var idx = rand.nextInt(BasicAlphabet.maxIndex() + 1);
+                    var idx = rand.nextInt(BasicAlphabet.letters.size());
                     try {
                         stringBuilder.append(getLowerLetter(idx));
                     } catch (JNamerNoIndexException e) {
