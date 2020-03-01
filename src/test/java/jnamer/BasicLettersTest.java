@@ -1,4 +1,4 @@
-package alphabet;
+package jnamer;
 
 import exceptions.JNamerNoIndexException;
 import org.junit.jupiter.api.Assertions;
