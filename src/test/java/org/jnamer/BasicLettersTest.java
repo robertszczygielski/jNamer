@@ -1,6 +1,6 @@
-package jnamer;
+package org.jnamer;
 
-import exceptions.JNamerNoIndexException;
+import org.exceptions.JNamerNoIndexException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

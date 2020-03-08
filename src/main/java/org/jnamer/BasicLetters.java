@@ -1,6 +1,7 @@
-package jnamer;
+package org.jnamer;
 
-import exceptions.JNamerNoIndexException;
+
+import org.exceptions.JNamerNoIndexException;
 
 import java.util.Random;
 import java.util.stream.IntStream;
