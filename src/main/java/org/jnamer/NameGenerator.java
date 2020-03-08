@@ -1,8 +1,8 @@
-package jnamer;
+package org.jnamer;
 
 public class NameGenerator {
 
-    public static String generateOneName() {
+    public static String generateOne() {
         return BasicNames.getRandomName();
     }
 

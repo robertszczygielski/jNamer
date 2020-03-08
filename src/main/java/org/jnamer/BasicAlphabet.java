@@ -1,4 +1,4 @@
-package jnamer;
+package org.jnamer;
 
 import java.util.Arrays;
 import java.util.List;

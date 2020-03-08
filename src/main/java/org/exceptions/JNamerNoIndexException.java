@@ -1,4 +1,4 @@
-package exceptions;
+package org.exceptions;
 
 public class JNamerNoIndexException extends Exception {
 

@@ -1,14 +1,14 @@
-package jnamer;
+package org.jnamer;
 
 import org.junit.jupiter.api.Test;
 
 import java.util.stream.Stream;
 
-import static jnamer.BasicNames.FEMALE_NAMES;
-import static jnamer.BasicNames.MALE_NAMES;
+import static org.jnamer.BasicNames.FEMALE_NAMES;
+import static org.jnamer.BasicNames.MALE_NAMES;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class NameGeneratorTest {
+class NameGeneratorTest {
 
     @Test
     void shouldReturnStringWithOneRandomName() {
@@ -16,7 +16,7 @@ public class NameGeneratorTest {
         var allName = Stream.concat(MALE_NAMES.stream(), FEMALE_NAMES.stream());
 
         // when
-        var result = NameGenerator.generateOneName();
+        var result = NameGenerator.generateOne();
 
         //then
         assertTrue(allName.anyMatch(it -> it.equals(result)));
