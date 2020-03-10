@@ -20,7 +20,7 @@ class NameGeneratorTest {
         var allName = Stream.concat(MALE_NAMES.stream(), FEMALE_NAMES.stream());
 
         // when
-        var result = NameGenerator.generateOne();
+        var result = NameGenerator.generate();
 
         //then
         assertTrue(allName.anyMatch(it -> it.equals(result)));
@@ -30,7 +30,7 @@ class NameGeneratorTest {
     void shouldReturnStringWithOneMaleName() {
         // given
         // when
-        var result = NameGenerator.generateOneMaleName();
+        var result = NameGenerator.generateMaleName();
 
         //then
         assertTrue(MALE_NAMES.contains(result));
@@ -40,7 +40,7 @@ class NameGeneratorTest {
     void shouldReturnStringWithOneFemaleName() {
         // given
         // when
-        var result = NameGenerator.generateOneFemaleName();
+        var result = NameGenerator.generateFemaleName();
 
         //then
         assertTrue(FEMALE_NAMES.contains(result));
@@ -54,7 +54,7 @@ class NameGeneratorTest {
         var allName = Stream.concat(MALE_NAMES.stream(), FEMALE_NAMES.stream()).collect(Collectors.toList());
 
         // when
-        var result = NameGenerator.generateMulti(numberOfNames);
+        var result = NameGenerator.generate(numberOfNames);
 
         // then
         assertAll(
@@ -70,7 +70,7 @@ class NameGeneratorTest {
         // given
 
         // when
-        var result = NameGenerator.generateMultiMale(numberOfNames);
+        var result = NameGenerator.generateMaleName(numberOfNames);
 
         // then
         assertAll(
@@ -87,7 +87,7 @@ class NameGeneratorTest {
         // given
 
         // when
-        var result = NameGenerator.generateMultiFemale(numberOfNames);
+        var result = NameGenerator.generateFemaleName(numberOfNames);
 
         // then
         assertAll(
