@@ -4,27 +4,27 @@ import java.util.List;
 
 public class NameGenerator {
 
-    public static String generateOne() {
+    public static String generate() {
         return BasicNames.getRandomName();
     }
 
-    public static String generateOneMaleName() {
+    public static String generateMaleName() {
         return BasicNames.getRandomMaleName();
     }
 
-    public static String generateOneFemaleName() {
+    public static String generateFemaleName() {
         return BasicNames.getRandomFemaleName();
     }
 
-    public static List<String> generateMulti(int numberOfNames) {
+    public static List<String> generate(int numberOfNames) {
         return BasicNames.getRandomNames(numberOfNames);
     }
 
-    public static List<String> generateMultiMale(int numberOfNames) {
+    public static List<String> generateMaleName(int numberOfNames) {
         return BasicNames.getRandomMaleNames(numberOfNames);
     }
 
-    public static List<String> generateMultiFemale(int numberOfNames) {
+    public static List<String> generateFemaleName(int numberOfNames) {
         return BasicNames.getRandomFemaleNames(numberOfNames);
     }
 }
