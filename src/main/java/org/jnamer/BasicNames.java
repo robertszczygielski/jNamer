@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class BasicNames {
@@ -33,6 +34,14 @@ public class BasicNames {
         return allName.get(random.nextInt(numberOfAllNames()));
     }
 
+    static List<String> getRandomNames(int numberOfNames) {
+        return IntStream.range(0, numberOfNames)
+                .mapToObj(it -> {
+                    return getRandomName();
+                })
+                .collect(Collectors.toList());
+    }
+
     static String getRandomMaleName() {
         return MALE_NAMES.get(random.nextInt(numberOfMaleNames()));
     }
@@ -49,7 +58,23 @@ public class BasicNames {
         return MALE_NAMES.size();
     }
 
+    public static List<String> getRandomMaleNames(int numberOfNames) {
+        return IntStream.range(0, numberOfNames)
+                .mapToObj(it -> {
+                    return getRandomMaleName();
+                })
+                .collect(Collectors.toList());
+    }
+
     private static int numberOfFemaleNames() {
         return FEMALE_NAMES.size() ;
+    }
+
+    public static List<String> getRandomFemaleNames(int numberOfNames) {
+        return IntStream.range(0, numberOfNames)
+                .mapToObj(it -> {
+                    return getRandomFemaleName();
+                })
+                .collect(Collectors.toList());
     }
 }

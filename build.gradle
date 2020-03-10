@@ -39,9 +39,8 @@ tasks.withType(Test) {
 
 apply plugin: "info.solidsoft.pitest"
 pitest {
-    testPlugin = 'junit5' //or built-in 'testng' which also has to be activated
-    // rest of your pitest configuration
-    targetClasses = ["alphabet.*"]  //by default "${project.group}.*"
+    testPlugin = 'junit5'
+    targetClasses = ['org.jnamer.*']  //by default "${project.group}.*"
     threads = 4
     outputFormats = ['HTML']
     timestampedReports = false
