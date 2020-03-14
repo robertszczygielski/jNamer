@@ -1,23 +1,42 @@
 package org.jnamer;
 
-class BasicMaleNames implements MaleName {
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
-    private StringBuilder stringBuilder = new StringBuilder();
+class MaleNameGenerator<T> extends HumansNameGenerator<T> {
 
-    BasicMaleNames() {
-
+    MaleNameGenerator() {
     }
 
-    BasicMaleNames(Gender gender) {
-        stringBuilder.append(gender.getSignOfRespect());
-        stringBuilder.append(" ");
+    MaleNameGenerator(Gender gender) {
+        super(gender);
     }
 
-    @Override
-    public String generate() {
-        String maleName = BasicNames.getRandomMaleName();
-        stringBuilder.append(maleName);
+    MaleNameGenerator(int numberOfNames) {
+        super(numberOfNames);
+    }
 
-        return stringBuilder.toString();
+
+    @SuppressWarnings("unchecked")
+    protected void generateName() {
+        String name = BasicNames.getRandomMaleName();
+        if (isRespect) {
+            generated = (T) nameWithRespect(name);
+        } else {
+            generated = (T) name;
+        }
+    }
+
+    private String nameWithRespect(String name) {
+        return gender.getSignOfRespect() + " " + name;
+    }
+
+    @SuppressWarnings("unchecked")
+    protected void generateNames() {
+        generated =
+                (T) IntStream
+                        .range(0, numberOfNames)
+                        .mapToObj(it -> BasicNames.getRandomMaleName())
+                        .collect(Collectors.toList());
     }
 }
