@@ -12,7 +12,7 @@ import static org.jnamer.BasicNames.FEMALE_NAMES;
 import static org.jnamer.BasicNames.MALE_NAMES;
 import static org.junit.jupiter.api.Assertions.*;
 
-class NameGeneratorTest {
+class FemaleNameGeneratorTest {
 
     @Test
     void shouldReturnStringWithOneRandomName() {
@@ -27,23 +27,27 @@ class NameGeneratorTest {
     }
 
     @Test
-    void shouldReturnStringWithOneMaleName() {
-        // given
-        // when
-        var result = NameGenerator.generateMaleName();
-
-        //then
-        assertTrue(MALE_NAMES.contains(result));
-    }
-
-    @Test
     void shouldReturnStringWithOneFemaleName() {
         // given
         // when
-        var result = NameGenerator.generateFemaleName();
+        var result = FemaleName.generateOne();
 
-        //then
+        // then
         assertTrue(FEMALE_NAMES.contains(result));
+    }
+
+    @Test
+    void shouldReturnStringWithOneMsFemaleName() {
+        // given
+        // when
+        var result = FemaleName.withMs().generate();
+
+        // then
+        var splitResult = result.split("\\s");
+        assertAll(
+                () -> assertEquals(splitResult[0], Gender.MS.getSignOfRespect()),
+                () -> assertTrue(FEMALE_NAMES.contains(splitResult[1]))
+        );
     }
 
     @DisplayName("Return list of male and female names")
