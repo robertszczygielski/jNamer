@@ -1,4 +1,4 @@
-#JNamer
+# JNamer
 
 Welcome to JNamer, a simply name generator. 
 
@@ -6,6 +6,7 @@ You can use this library for generate names and surnames.
 
 #### Male Name:
 to generate male name:
+
 - one name: 
 ```
 String name = MaleName.generateOne();
@@ -22,8 +23,9 @@ String name = MaleName.withMr().generate();
 ```
 
 #### Female name:
+to generate female name:
 
-- for generate one female name use:
+- one name:
 ```
 String name = FemaleName.generateOne();
 ```
