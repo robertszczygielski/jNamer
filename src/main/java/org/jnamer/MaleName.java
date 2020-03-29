@@ -2,7 +2,7 @@ package org.jnamer;
 
 import java.util.List;
 
-public interface MaleName<T> extends AllName<T> {
+public interface MaleName<T> extends Generatable<T> {
 
     static MaleName<String> withMr() {
         return new MaleNameGenerator<>(Gender.MR);

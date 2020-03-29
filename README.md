@@ -39,3 +39,14 @@ List<String> names = FemaleName.numberOfNames(numberOfNames).generate();
 ```
 String name = FemaleName.withMs().generate();
 ```
+
+#### Surname:
+- for generate one surname use:
+```
+String surname = Surname.generateOne();
+```
+
+- more then one name
+```
+List<String> surnames = Surname.numberOfNames(numberOfSurnames).generate();
+```
