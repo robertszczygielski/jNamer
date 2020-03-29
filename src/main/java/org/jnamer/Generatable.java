@@ -1,6 +1,6 @@
 package org.jnamer;
 
-public interface AllName<T> {
+public interface Generatable<T> {
 
     T generate();
 

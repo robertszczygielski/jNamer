@@ -15,7 +15,7 @@ class SurnameGeneratorTest {
         // given
 
         // when
-        var result = SurnameGenerator.generate();
+        var result = Surname.generateOne();
 
         // then
         assertTrue(SURNAMES.contains(result));
@@ -28,7 +28,7 @@ class SurnameGeneratorTest {
         // given
 
         // when
-        var result = SurnameGenerator.generate(numberOfSurnames);
+        var result = Surname.numberOfNames(numberOfSurnames).generate();
 
         // then
         assertTrue(SURNAMES.containsAll(result));
