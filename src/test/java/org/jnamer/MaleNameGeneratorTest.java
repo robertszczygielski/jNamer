@@ -12,13 +12,27 @@ import static org.junit.jupiter.api.Assertions.*;
 class MaleNameGeneratorTest {
 
     @Test
-    void shouldReturnStringWithOneMaleName() {
+    void shouldReturnOneMaleName() {
         // given
         // when
         var result = MaleName.generateOne();
 
         // then
         assertTrue(MALE_NAMES.contains(result));
+    }
+
+    @Test
+    void shouldReturnOneMaleNameWithSurname() {
+        // given
+        // when
+        var result = MaleName.withSurname().generate();
+
+        // then
+        var splitResult = result.split("\\s");
+        assertAll(
+                () -> assertTrue(MALE_NAMES.contains(splitResult[0])),
+                () -> assertTrue(BasicSurnames.SURNAMES.contains(splitResult[1]))
+        );
     }
 
     @Test

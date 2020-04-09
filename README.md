@@ -40,6 +40,11 @@ List<String> names = FemaleName.numberOfNames(numberOfNames).generate();
 String name = FemaleName.withMs().generate();
 ```
 
+- one name with surname.
+```
+String name = FemaleName.withSurname().generate();
+```
+
 #### Surname:
 - for generate one surname use:
 ```

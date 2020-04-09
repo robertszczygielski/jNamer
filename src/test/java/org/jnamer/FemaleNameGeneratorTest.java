@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class FemaleNameGeneratorTest {
 
     @Test
-    void shouldReturnStringWithOneFemaleName() {
+    void shouldReturnOneFemaleName() {
         // given
         // when
         var result = FemaleName.generateOne();
@@ -25,7 +25,21 @@ class FemaleNameGeneratorTest {
     }
 
     @Test
-    void shouldReturnStringWithOneMsFemaleName() {
+    void shouldReturnOneFemaleNameWithSurname() {
+        // given
+        // when
+        var result = FemaleName.withSurname().generate();
+
+        // then
+        var splitResult = result.split("\\s");
+        assertAll(
+                () -> assertTrue(FEMALE_NAMES.contains(splitResult[0])),
+                () -> assertTrue(BasicSurnames.SURNAMES.contains(splitResult[1]))
+        );
+    }
+
+    @Test
+    void shouldReturnOneMsFemaleName() {
         // given
         // when
         var result = FemaleName.withMs().generate();
