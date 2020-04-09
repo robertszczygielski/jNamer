@@ -22,6 +22,11 @@ List<String> names = MaleName.numberOfNames(numberOfNames).generate();
 String name = MaleName.withMr().generate();
 ```
 
+- one name with surname.
+```
+String name = MaleName.withSurname().generate();
+```
+
 #### Female name:
 to generate female name:
 
