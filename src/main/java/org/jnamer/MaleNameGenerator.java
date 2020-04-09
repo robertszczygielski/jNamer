@@ -8,27 +8,29 @@ class MaleNameGenerator<T> extends HumansNameGenerator<T> {
     MaleNameGenerator() {
     }
 
+    MaleNameGenerator(Surname<String> surnameGenerator) {
+        this.surnameGenerator = surnameGenerator;
+    }
+
     MaleNameGenerator(Gender gender) {
-        super(gender);
+        this.gender = gender;
     }
 
     MaleNameGenerator(int numberOfNames) {
-        super(numberOfNames);
+        this.numberOfNames = numberOfNames;
+        this.isList = true;
     }
-
 
     @SuppressWarnings("unchecked")
     protected void generateName() {
-        String name = BasicNames.getRandomMaleName();
-        if (isRespect) {
-            generated = (T) nameWithRespect(name);
-        } else {
-            generated = (T) name;
-        }
-    }
+        StringBuilder stringBuilder = new StringBuilder();
 
-    private String nameWithRespect(String name) {
-        return gender.getSignOfRespect() + " " + name;
+        addRespectIfPresent(stringBuilder);
+        stringBuilder.append(BasicNames.getRandomMaleName());
+        addSurnameIfPresent(stringBuilder);
+
+        generated = (T) stringBuilder.toString();
+
     }
 
     @SuppressWarnings("unchecked")
